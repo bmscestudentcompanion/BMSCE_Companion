@@ -1,4 +1,4 @@
-name: Deploy to FreeInfinity
+name: Deploy Frontend to FreeInfinity
 
 on:
   push:
@@ -15,18 +15,13 @@ jobs:
     
     - name: Deploy to FreeInfinity
       run: |
-        # Install any dependencies (if needed)
-        npm install
-        
-        # Build your website (if needed)
-        npm run build
-        
-        # Copy the built files to a deploy directory
-        cp -r dist/* deploy/
+        # Copy static files to deploy directory
+        cp -r ./BMSCE_Companion/BMSCE_Companion/dist/* ./deploy/
         
         # Change to the deploy directory
-        cd deploy/
+        cd ./deploy/
         
         # Deploy to FreeInfinity using FTP (example)
         # Replace FTP_USERNAME, FTP_PASSWORD, and FTP_SERVER with your actual FTP credentials and server
         curl -T ./* -u $if0_34806115:$NmjOePTLzNR ftp://ftpupload.net/public_html/
+
