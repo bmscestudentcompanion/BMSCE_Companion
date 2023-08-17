@@ -16,7 +16,7 @@ jobs:
     - name: Deploy to FreeInfinity
       run: |
         # Copy static files to deploy directory
-        cp -r ./BMSCE_Companion/BMSCE_Companion/dist/* ./deploy/
+        cp -r ./BMSCE_Companion/* ./deploy/
         
         # Change to the deploy directory
         cd ./deploy/
