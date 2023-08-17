@@ -15,13 +15,10 @@ jobs:
     
     - name: Deploy to FreeInfinity
       run: |
-        # Copy static files to deploy directory
-        cp -r ./* ./deploy/
-        
-        # Change to the deploy directory
-        cd ./deploy/
-        
+        # Deploy frontend files directly from the BMSCE_Companion directory
+        cd ./BMSCE_Companion
         # Deploy to FreeInfinity using FTP (example)
         # Replace FTP_USERNAME, FTP_PASSWORD, and FTP_SERVER with your actual FTP credentials and server
         curl -T ./* -u $if0_34806115:$NmjOePTLzNR ftp://ftpupload.net/public_html/
+
 
