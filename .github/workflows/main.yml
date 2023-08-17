@@ -1,0 +1,32 @@
+name: Deploy to FreeInfinity
+
+on:
+  push:
+    branches:
+      - yash_test # Change this to your desired branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Deploy to FreeInfinity
+      run: |
+        # Install any dependencies (if needed)
+        npm install
+        
+        # Build your website (if needed)
+        npm run build
+        
+        # Copy the built files to a deploy directory
+        cp -r dist/* deploy/
+        
+        # Change to the deploy directory
+        cd deploy/
+        
+        # Deploy to FreeInfinity using FTP (example)
+        # Replace FTP_USERNAME, FTP_PASSWORD, and FTP_SERVER with your actual FTP credentials and server
+        curl -T ./* -u $if0_34806115:$NmjOePTLzNR ftp://ftpupload.net/public_html/
