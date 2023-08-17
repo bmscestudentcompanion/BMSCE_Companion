@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "express": "*"
+  },
+  "scripts": {
+    "start": "login.php"
+  },
+  "name": "bms_webdev",
+  "version": "1.0.0",
+  "main": "login.php",
+  "devDependencies": {},
+  "author": "bms_students",
+  "license": "MIT",
+  "description": "bmsce student companion"
+}
