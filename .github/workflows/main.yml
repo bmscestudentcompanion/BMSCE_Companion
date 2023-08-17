@@ -1,4 +1,4 @@
-name: Deploy Frontend to FreeInfinity
+name: Deploy Frontend Images to FreeInfinity
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
     
     - name: Deploy to FreeInfinity
       run: |
-        # Deploy frontend files directly from the 'image' directory
-        # Deploy to FreeInfinity using FTP (example)
-        # Replace FTP_USERNAME, FTP_PASSWORD, and FTP_SERVER with your actual FTP credentials and server
-        curl -T ./BMSCE_Companion/image/* -u $if0_34806115:$NmjOePTLzNR ftp://ftpupload.net/public_html/
+        # List all image files in the 'image' directory and upload each using curl
+        for file in ./BMSCE_Companion/image/*; do
+          curl -T "$file" -u $if0_34806115:$NmjOePTLzNR ftp://ftpupload.net/public_html/
+        done
